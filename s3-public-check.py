@@ -1,16 +1,14 @@
 import boto3
 import slackweb 
 
-lst = ["SEC", "Build", "Riq", "IQC", "ECP-Prod", "ECP-Staging", "SFDC-SIQ-Staging", "SFDC-SIQ-Prod", "Databricks-Admin", "Analytics-Legacy"]
+lst = [] ##Add list of your accounts over here. The Name of the accounts will be those that you set up in your AWS creds
 
 
 def slack_call(i): 
-         slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+         slack = slackweb.Slack(url="")
          slack.notify(text=str(i)+" is publicly visible")
 
 def bucket_check(account,client):
-   #slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
-   slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
    slack.notify(text="==============================================")
    slack.notify(text="`Public S3 buckets in the "+str(account)+" Account`")
    slack.notify(text="==============================================")
